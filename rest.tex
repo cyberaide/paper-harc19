@@ -1,0 +1,734 @@
+
+
+
+\section{Applications}
+
+
+\begin{table*}
+  \caption{Example Comet application}
+  \label{tab:examples}
+  \begin{tabular}{p{2cm}p{3cm}p{8cm}}
+    \toprule
+    Name & Domain & Human in the Loop\\
+    \midrule
+    DBGAP & Bio application to do this that and the orther & deployment, porting \\
+  \bottomrule
+\end{tabular}
+\end{table*}
+
+
+\subsection{Virtual Machines on Comet}
+
+
+Virtual Cluster integration with Open Science Grid (OSG) has expanded Comet’s role in high throughput computing, and led to growth in virtual cluster adoption on Comet
+The OSG virtual cluster interface is now fully integrated with Comet. Any XSEDE user with an allocation and an OSG account, is able utilize the OSG interface. Virtual cluster allocations appear in XDMoD under the virt queue. Currently, there are ten XSEDE allocations running on Comet capable of utilizing virtual 
+clusters.  Five of them are via the OSG virtual cluster interface (Fig. 9). Another 2 virtual clusters are in on-ramping process to use virtual clusters. OSGs virtual clusters serve also as one of the use cases to apply virtual clusters.
+
+
+
+
+Success in onramping Virtual Cluster projects requires access to expertise in the allocated project team
+Comet’s approach to virtualization is to deliver to the allocated project staff a near bare metal environment allowing a high degree of reuse and customization of the software environment. Consequently, the project staff managing the virtual cluster must possess the necessary systems administration expertise. However, we have found that this is not always the case and therefore more time is required by the comet team to bootstrap these projects. This suggests that additional education beyond those originally envisioned is needed. On the other hand the Indiana University team has taught hundreds of students to set up complex virtual cluster environments as part of their core big data class curriculum [9] resulting in a number of DevOps deployable virtual cluster templates that can be deployed by the non expert [6] and [7]. Tutorials at XSEDE 16, and PEARC’17 and a presentation at NIST [7] supported dissemination.  Interfaces to the comet virtual clusters are integrated in a convenient to use tool called cloudmesh client [8] that not only allows us to create virtual clusters on comet but also strives to do so on AWS, Azure, Openstack, and even container based cluster management software.
+
+WIth more VCs utilizing the system, we conducted an initial assessment of the virtual clusters. As a VC is integrated as a first class job, each VC node(s) starting/powering on action is equivalent to a Slurm job on the Comet queuing system. Hence, VC shares the same resources as the HPC jobs do. To better understand the VC jobs characteristics we studied the waittime, which is defined as the duration between a VC admin requested to start VC node(s) to when the node(s) is started and ready to use. In the queuing system this is translated to the duration between job submission time and job starting time. Figure 11 shows the VC jobs waittime in their submitted order. Figure 12 shows the empirical cumulative distribution of the waitime. Figure 10 shows that most often users only need to wait minutes, while in resource limited times wait times increase to about an hour. Concretely, Figure 11 shows that 3 quarters of the jobs waited less than 3.7 minutes, and 90\% of them waited less than 19.6 minutes. Statistics also shows that 67\% jobs waited less than 1 minute to get started. The analyses are based on the data we have been collecting more recently (about a month worth of data, ~700 VC jobs). We will continue monitoring this to help provide better services to VC users.
+
+
+
+
+\appendix
+
+\section{Internal Resources}
+
+IU summary archive:
+
+\url{https://docs.google.com/document/d/1PucLfc2qkgPFzLmUOd5v1rkIE5dY_jvjTdI3T4u8C3w/edit#heading=h.o1ekl99056ca}
+
+A dbGaP planning and design document from confluence:
+
+\url{https://forge.sdsc.edu/confluence/display/CVCA/dbGaP+Virtual+Cluster+Plan}
+
+\section{Projects}
+
+\textbf{TG-PHY150019}
+
+In this renewal we request time on the Comet cluster to continue to use
+XSEDE to explore the gravitational-wave sky with Advanced LIGO. We also
+request time on Stampede to support an ECSS request to profile and
+analyze LIGO's compact-object binary search application on the Knights
+Landing processor. Advanced LIGO's detection of the binary black hole
+mergers GW150914 and GW151226 has established the field of
+gravitational-wave astronomy. Exploring the gravitational-wave sky is
+one of the most exciting frontiers in physics and astronomy. We also
+request ECSS support to implement a new ``backfill'' queue on Comet that
+would take advantage of idle cycles without any negative impact to
+normal jobs. Comet was designed and allocated for fast turnaround for
+moderate-scale users, especially from Science Gateways. Like other such
+systems, this can result in small amounts of idle time whenever
+utilization drops below 100\%. In addition, there are often unused
+cycles due to scheduling holes for large MPI jobs. The LIGO PyCBC
+compact-object binary search is robust to running in a preemptable,
+high-throughput mode. ECSS support will allow us to integrate the PyCBC
+code with the Comet scheduler and implement a preemptable option that
+makes use of these idle cycles. Once implemented, this ``backfill''
+capability will be available to all projects, include this one, via the
+XSEDE OSG gateway. The total of the request and backfill capability will
+be used to perform analysis of data from Advanced LIGO's second
+observing run with the addition of simulated signals to measure the
+rates and population distribution of compact-object binaries in the
+universe. As an additional benefit of this project, Comet backfill time
+created could be made available to other projects through OSG.
+
+\textbf{TG-TRA150025}
+
+Requesting renewal of Campus Champion allocation at UC Berkeley
+
+\textbf{TG-DEB160001}
+
+This proposal seeks to evaluate the use of XSEDE Comet resources to
+advance computational freshwater science research. The startup
+allocation will allow the addition of Comet cloud instances to a
+small-scale distributed computing pool of resources connected by an IP
+virtual network overlay that has been established by the PI and
+collaborators, furthering research both on freshwater science and
+computer science. The proposed research is composed of two
+interdisciplinary aims: First, we will advance the current understanding
+of the effects of eutrophication and climate change on harmful algal
+blooms through batch simulation of lake hydrodynamics and water quality
+models. Second, we will advance the performance and usability of
+self-configuring IPOP (IP-over-P2P) virtual networks for collaborative
+distributed computing environments spanning multiple institutions and
+commercial cloud providers.The PI is actively collaborating with Paul
+Hanson (U. Wisconsin Center for Limnology) and Cayelan Carey (Biological
+Sciences, Virginia Tech) on an interdisciplinary project that involves
+two international research communities: GLEON, the Global Lake
+Ecological Observatory Network (www.gleon.org) and PRAGMA, the Pacific
+Rim Applications and Grid Middleware Assembly (www.pragma-grid.net).
+This collaborative joint effort between the two research communities --
+GRAPLE (GLEON Research and PRAGMA Lake Expedition, github.com/GRAPLE) --
+has led to the creation of a distributed computing resource for
+simulations using an open-source lake model framework, GLM
+(aed.see.uwa.edu.au/research/models/GLM) and HTCondor across distributed
+computers connected by the IPOP overlay virtual network
+(www.ipop-project.org). As part of a GLEON initiative, an increasing
+number of freshwater scientists worldwide are using simulation modeling
+to improve their understanding of the effects of eutrophication and
+climate change on phytoplankton communities in lakes. However, most
+GLEON researchers have limited computational resources to effectively
+run thousands of simulations for different nutrient and climate
+scenarios. The PI and collaborators have deployed a small-scale
+prototype distributed computing environment with \textasciitilde{}26
+compute cores, with PRAGMA resources at their own institutions, to serve
+as a basis for an expanding community resource for sharing of models,
+datasets, and computing resources. We propose to evaluate the use of a
+small-scale virtualized cluster in Comet in order to achieve the
+following goals: (1) Enable access to a greater number and greater
+capacity of high-throughput computing resources, effectively supporting
+shorter execution turn-around times for large GLM model run batches (2)
+Study the performance and usability of user-level virtual network
+overlays, which support high-throughput computing using existing O/Ss,
+job scheduling middleware, and applications, spanning geographically
+distributed domains (3) Train an interdisciplinary cohort of scientists,
+especially students, to better understand and exploit the capabilities
+of computing resources on the cloud for scientific applications (4)
+Expand the availability of computational resources beyond our group of
+investigators, reaching out to researchers in the GLEON scientific
+network, and demonstrating the ability to aggregate distributed
+resources and create virtual clusters for PRAGMA applications
+
+\textbf{TG-PHY140031}
+
+The Open Science Grid is a national High Throughput Computing
+Cyberinfrastructure supporting about 90Million hours of single core
+computing per month across all of science. With this request, we will
+explore supporting small scale multi-core (up to the 24 cores per node
+on Comet), large memory (up to 128GB RAM per node on Comet), GPU (up to
+4 GPUs per node on Comet), and large IO (benefitting from the 320GB of
+SSD per node on Comet). I.e. we propose to function as a ``portal'' to
+Comet via its virtual cluster interface in order to provide capabilities
+that are otherwise rare on OSG. We are requesting a modest amount of
+300k core hours and 1000 GPU hours across three science drivers as
+described below.
+
+\textbf{TG-TRA150025}
+
+Campus Champions Renewal
+
+\textbf{TG-CCR150006}
+
+Computational scientists have access to multi-petaflop machines today,
+and machines with hundreds of petaflops will be available within the
+coming years as an intermediate path forward towards the exascale
+machine. As a result they need to invest in research, development and
+implementation of algorithms and codes on current and future High
+Performance Computing (HPC) systems. Application performance at hundreds
+of petaflops and eventually at the exascale will be critically
+influenced by the scalability and performance of I/O from application
+perspective. Similarly computational scientists will need to utilize the
+file system architecture and associated new evolving system software
+efficiently. The ability to quickly write checkpoint/restart files,
+visualize data, and do data analysis at scale will greatly depend on the
+efficiency of I/O operations and associated with this is how efficiently
+data can be moved among various storage systems, including the archive.
+This project will focus on developing, implementing, and testing
+strategies for large scale HPC I/O. This will be done using widely used
+weather, climate, CFD, physics and other codes of interest to scientific
+community and that represent most I/O intensive workloads.
+
+\textbf{TG-PHY150040}
+
+IceCube is a neutrino detector built at the South Pole by instrumenting
+about a cubic kilometer of ice with 5160 light sensors. IceCube is
+taking data since 2006, and it is envisioned to continuing doing so for
+the next 20 years. One of the primary goals for IceCube is to elucidate
+the mechanisms for production of high-energy cosmic rays by detecting
+high-energy neutrinos from astrophysical sources. The excellent
+performance of IceCube plus the advances in understanding fundamental
+detector characteristics such as the ice properties have allowed to
+expand its scientific reach towards measurements and searches that
+require much higher precision and control of systematic error sources.
+Examples of these are the measurement of neutrino oscillations in a
+previously unexplored energy range from 10 to 60 GeV. The simulations
+proposed in this request will enable carrying out neutrino physics
+precision analysis which require of a very good understanding of
+possible sources of systematic errors. Examples of these are Tau
+neutrino appearance and Muon neutrino disappearance precision
+measurements as well as searches for low energy sterile neutrinos.
+
+\textbf{TG-CIE170021}
+
+Big Data is a term used to describe the large amount of data in the
+networked, digitized, sensor-laden, information-driven world. While
+opportunities exist with Big Data, the data can overwhelm traditional
+technical approaches, and the growth of data is outpacing scientific and
+technological advances in data analytics. To advance progress in Big
+Data, the NIST Big Data Public Working Group (NBD-PWG) is working to
+develop consensus on important fundamental concepts related to Big Data.
+The results are reported in the NIST Big Data Interoperability Framework
+series of volumes. This work summarizes the work performed by the
+NBD-PWG to characterize Big Data from an architecture perspective,
+presents the NIST Big Data Reference Architecture (NBDRA) conceptual
+model, and discusses the components and fabrics of the NBDRA. A virtual
+cluster on Comet will enable the evaluation and test deployment of the
+various technologies and software stacks involved, towards the full
+deployment of NIST Big Data Reference Architecture (NBDRA).
+
+\textbf{TG-NCR130004}
+
+Darknets, also known as network telescopes, are used to observe
+unsolicited traffic sent to unassigned IP address space. Observing such
+one-way traffic allows visibility into a wide range of security-related
+events, including scanning of address space by hackers looking for
+vulnerable targets, denial-of-service attacks, automated spread of
+computer worms, and even macroscopic connectivity disruptions in the
+Internet. At CAIDA, we collect traffic data from the UCSD network
+telescope (one of the largest existing darknets) and we started
+investigating and proposing efficient techniques for processing and
+classifying darknet traffic in real-time fashion. Recently, we
+integrated our software for high-speed analysis of traffic data with
+ongoing data collection and reporting. Specifically, we developed
+analysis plugins to aggregate live traffic data in different ways (e.g.,
+count of unique source IPs per country) and extract hundreds of
+thousands metrics that we store in round robin databases (RRD). Such
+data can then be both interactively visualized with a variable time
+aggregation, or automatically processed for anomaly detection. Although
+RRD-style databases allow space-efficient, fixed-size storage of time
+series data, they do so by leveraging the underlying file system to
+represent metric meta-data. That is, each individual metric is stored as
+a separate file on disk. Updating all metrics with a new set of data
+points requires updating every file. When scaled to hundreds of
+thousands of metrics, the I/O load placed on the disks is beyond the
+capacity of regular spinning disk. The allocation of a dedicated Gordon
+I/O node to act as a time series database server (with the RRD files
+stored on the SSD array) instead successfully enabled efficient
+processing, supporting the collection of hundreds of thousand metrics
+and allowing us to push further our research on the automated analysis
+of such a massive set of valuable traffic data. Currently we employ this
+Gordon node 24/7 in our reporting and exploratory analysis system. This
+system is a key component of our research on Internet security,
+providing support to research projects co-funded by NSF and DHS. Our
+plans for the 2nd year of allocation include replacing the current
+time-series database structure with a new one, which we developed
+(called "DBATS", DataBase of Aggregated Time Series), optimized for
+high-speed simultaneous updates of large numbers of metrics. The new
+system should allow us to push the number of metrics stored on the SSD
+array to the order of millions (selected based on a re-evaluation of the
+metrics with the highest potential of information content in the context
+of our analyses). In addition, the deployment and continuous
+availability of this time series database server, enabled further
+research in improving Charthouse, our system for interactive
+visualization of time series data and associated meta-data. Our future
+plans include introducing in Charthouse functionalities for fast
+visualization of Internet data with geographical properties (e.g., based
+on IP geolocation) on geographical maps to support more advanced data
+analysis.
+
+\textbf{TG-GEO170008}
+
+We present a 3D Thermal-Hydrologic-Mechanical-Chemical ("THMC")
+simulator for modeling geologic CO2 sequestration in brine saturated
+sandstone-shale reservoirs and investigate the effects of CO2 injection
+on carbonate mineral saturation and precipitation, under variable
+injection temperatures and pressures. A nine-mineral kinetic mechanism
+governing the dissolution of quartz, potassium-feldspar ("K-spar"),
+anorthite, albite, calcite, kaolinite, smectite, illite, and halite in a
+porous medium is used, with the aqueous phase pore water temperature
+modeled using a transient heat advection-diffusion transport model with
+non-constant thermal coefficients. Water-rock interaction is coupled
+with a transient mixed finite element method for fluid pressure and
+velocity, and a Galerkin method for poroelastic mechanics. Thermal
+coefficients (specific heat and specific enthalpy) are temperature and
+pressure dependent and computed using the revised
+Helgeson-Kirkham-Flowers ("HKF") model for approximating the
+thermodynamic properties of aqueous electrolytic solutions at geologic
+conditions of high temperature and pressure. The HKF derived heat
+capacity and enthalpy of charged aqueous species arising from the
+interaction of CO2-rich brine with sandstone are used in the heat
+transfer model source term for computing aqueous phase volumetric energy
+generation rate. The poroelastic and pressure-velocity fields are solved
+in parallel with MPI using domain decomposition across virtualized
+compute nodes participating in a Comet Virtual Cluster. Solution
+datasets consisting of rock stress, strain, and displacement, solute
+concentration, mineral saturation, mineralization rate, mineral volume
+fraction, pH, alkalinity, salinity, pore fluid pressure, pore fluid
+velocity, reservoir porosity, and permeability are written to a BeeGFS
+parallel storage cluster using MPI-IO and parallel NetCDF. Connectivity
+between the parallel storage cluster and Comet Virtual Cluster is
+facilitated by the PRP Multi-Institution Kubernetes ScienceDMZ
+Infrastructure.
+
+\textbf{TG-CCR150006}
+
+We are developing tools to capture and analyze memory activities in
+applications. The goal is to use data address tracing and capture data
+movement events that can be associated to data objects; the result is an
+application profile that is based on data objects. However, Rocks does
+not support recent kernels that have the required "perf" capabilities
+and we therefore require a virtual cluster on Comet that we can manage
+and use with a more recent kernel and software stack.
+
+\textbf{TG-EAR170002}
+
+We are requesting an startup allocation on the XSEDE Comet supercomputer
+resource in order to manage and process high resolution topography data
+(including lidar based point cloud data) for the NSF funded
+OpenTopography project. Over the past decade, there has been dramatic
+growth in the acquisition of publicly funded high-resolution topographic
+and bathymetric data for scientific, environmental, engineering and
+planning purposes. Because of the richness of these data sets, they are
+often extremely valuable beyond the application that drove their
+acquisition and thus are of interest to a large and varied user
+community. However, because of the large volumes of data produced by
+high-resolution mapping technologies such as lidar, it is often
+difficult to distribute these datasets. Furthermore, the data can be
+technically challenging to work with, requiring software and computing
+resources not readily available to many users. Some of these complex
+algorithms require high performance computing resources to run
+efficiently, especially in an on-demand processing and analysis
+environment. With the steady growth in the number of users, complex and
+resource intensive algorithms to generate derived products from these
+invaluable datasets, HPC resources are becoming more necessary to meet
+the increasing demand. By utilizing the comet XSEDE resource,
+OpenTopography aims to democratize access and processing of these
+high-resolution topographic data.
+
+\textbf{TG-BIO170028}
+
+Every individual's genome carries within it the history of all the
+ancestors of that individual. Thus, by analyzing a small number of
+genomes, we can accurately infer the demographic history of entire human
+populations. This demographic history helps establish a baseline that is
+needed for research and discovery in medical genomics. We are using a
+process to more accurately infer the demographic history of human
+populations by comparing genomic statistics from millions of genome
+simulations to real population genomic data. While other researchers
+have worked with this process using only a few individuals or a portion
+of a chromosome, we are pushing the limit of computing capabilities by
+simulating whole chromosomes of hundreds of individuals. Using the whole
+chromosome allows us to look at more recent demographic history, which
+is particularly helpful in finding genetic links to disease processes.
+After publication, we will make our pipeline available so other
+researchers can apply it to other populations. This project pushes the
+frontier of genomic research in that it uses new methods, simulates a
+larger part of the genome, and is being applied to populations not yet
+thoroughly studied.
+
+
+\textbf{TG-NCR130004}
+
+Darknets, also known as network telescopes, are used to observe
+unsolicited traffic sent to unassigned IP address space. Observing such
+one-way traffic allows visibility into a wide range of security-related
+events, including scanning of address space by hackers looking for
+vulnerable targets, denial-of-service attacks, automated spread of
+computer worms, and even macroscopic connectivity disruptions in the
+Internet. At CAIDA, we collect traffic data from the UCSD network
+telescope (one of the largest existing darknets) and we process and
+classify such traffic in real-time. We developed analysis tools to
+aggregate live traffic data in different ways (e.g., count of unique
+source IPs per country) and extract millions of time series metrics that
+are stored in time series databases on the Gordon IO node, updated 24/7,
+and correlated with other sources of Internet measurement data to gain a
+high-level view of the state of the global Internet.
+
+\textbf{TG-PHY160019}
+
+Precision astrophysical measurements yield the surprising fact that only
+5\% of the mass-energy content of the universe consists of baryonic
+matter that we can observe, while nearly a quarter is made of
+gravitationally interacting ``dark matter'' whose exact nature is
+unknown. Depending on their exact mass, constituent particles of dark
+matter could be produced in high-energy collisions at the Large Hadron
+Collider (LHC). We are a group of researchers at Fermilab and MIT who
+are members of the CMS collaboration. Our research is focused on looking
+for collisions events indicative of dark matter particles recoiling
+against one or several identified particles in the CMS detector. Doing
+so requires detailed understanding of known Standard Model backgrounds
+as well as benchmark dark matter processes and both steps require large
+scale generation and simulation of events for which HPC is ideally
+suited. We request a startup allocation on Comet and Stampede to
+establish HPC-specific workflows for simulating events necessary for
+this search. We will be using the established CMS collaboration codebase
+to do so; Stampede and Comet both have access mechanisms to those
+codebases via the CERN Virtual Machine File System (CVMFS).
+
+\textbf{TG-PHY140031}
+
+CMS is one of the two general-purpose particle physics detectors at the
+Large Hadron Collider (LHC) that recently discovered the Higgs boson
+{[}1{]}. After the Higgs discovery, the next big focus is the search for
+dark matter. Theoretical predictions based on past experimental results
+fully defined the search for the Higgs. For dark matter, the situation
+is much more hazy. We hope to produce dark matter at the LHC in cascade
+decays of a whole spectrum of new fundamental particles, the lowest mass
+of which is dark matter. The details of this spectrum of masses is
+unknown. To have sensitivity to a larger range of possible mass spectra,
+the LHC increases its energy by 60\% and its luminosity by x2 when it
+resumes collisions in 2015. To cope with these collider changes, CMS
+made a variety of changes in its event reconstruction software that now
+need to be validated/debugged/improved upon using large scale
+simulations of proton proton collisions. These are essential
+preparations for data taking in 2015. With this allocation request we
+are requesting resources to process 800 Million simulated proton proton
+collisions in the CMS detector. This is a time critical request in order
+to meet Fall 2014 deadlines in the preparations for 2015 data taking.
+
+\textbf{TG-DEB160010}
+
+Lifemapper (Lm) is a high-throughput species distribution (range)
+modeling system and the main computational platform for this project.
+Started in 1999, Lifemapper was created to compute, archive and web
+publish, species distribution models (``SDMs'', also known as species
+niche models or predicted habitat models) using all available online
+species occurrence data vouchered by specimens in natural history
+museums from over 250 years of biodiversity inventory. Using the
+Lifemapper platform, known species localities from those museum
+specimens are combined with climate models to predict a species'
+``niche'' or "potential habitat" under current day climate and for
+future climate change scenarios. The LmSDM (species distribution
+modelling) component computes these single-species predictions.
+Lifemapper's Range and Diversity subsystem or ``LmRAD", extends our
+modeling from one-at-a-time, single-species predictions, to large-scale,
+1000s to 10,000s of species, and continental- and global-sized
+geographic extents. LmRAD calculates multi-species biodiversity analyses
+by creating a binary species incidence or "presence-absence matrix"
+(PAM) for a very large number of species range models which are SDM
+outputs, then computes a number of biologically meaningful indices which
+describe the spatial patterns and properties of large geographic
+assemblages of species, e.g. the plant species of North America, mammals
+of Africa, etc. The Lifemapper platform is a large but modular web
+services-based system of three core software components: (1) LmServer
+for data management and communications; (2) LmCompute for calculations;
+and (3) client applications including a Lifemapper plugin to the
+open-source geographic information system, QGIS, and a web site. The
+LmCompute and LmServer modules are both involved in modeling operations.
+LmCompute instances request jobs from LmServer, execute them, then post
+the model results back to LmServer where data are written to storage and
+metadata to the PostgreSQL database. Two applications on LmCompute
+underlie SDM calculations: openModeller and MaxEnt, while all LmRAD
+calculations are performed by Lifemapper code. From LmServer APIs and a
+Python client library, a user can obtain original and computed data
+using the Lm website or the QGIS workstation GIS environment. As part of
+a collaboration with San Diego Supercomputer Center through the Pacific
+Rim Analysis and Grid Management Assembly (PRAGMA), we recently ported
+Lifemapper to the Rocks Cluster Distribution to run on physical or
+virtual clusters. While this change greatly stabilized and hardened our
+software, our local resources have proved to be inadequate to handle
+much larger scale experiments. As part of an ongoing proof-of-concept
+experiment with Harvard University, we are running multiple SDMs on
+North American data for the plant kingdom. The first stage of this
+experiment was restricted to about 12,000 species with adequate
+occurrence data in the United States and Canada. For each of these
+species, we are ran 3 models, each with different inputs. For each of
+these 36,000 models, we created 15 SDMs or potential habitat
+availability maps, also known as ``projections'', for a total of 540,000
+projections. The compressed outputs total about 1GB each. This
+proof-of-concept project has led to an NSF proposal (pending,
+Macrosystems Biology Program), joint with Harvard, extending this work
+to include newly available data from Mexico with a combined total of
+about 38,000 species. Our continuing work with SDSC has led us to the
+conclusion that deploying our software on a virtual cluster on SDSC's
+Comet cluster would leverage both our existing Rocks-based software
+stack, and also the virtual cluster support unique to Comet. We have
+completed the first stage of our proof-of-concept work on the Stampede
+XSEDE cluster at TACC, but the workflow by which we accomplished those
+jobs was disconnected from our software, and required manual job
+assembly and data management. We would like compute the second stage of
+this proof-of-concept on Comet, with some technical assistance from
+Nadya Williams at SDSC. Should our recently submitted NSF proposal be
+funded, we will formally request an XSEDE allocation on Comet to
+complete that work.
+
+\section{b.tex}
+
+\textbf{Virtual Clusters on \emph{Comet}}
+
+During the past year the Virtual Cluster capability on \emph{Comet} has
+been transformed from a pilot program on a small subset of isolated
+\emph{Comet} resources to the production level services sharing the same
+resources and the queuing systems on \emph{Comet}. It started with 3
+projects in early user mode a year ago, and grown to more than 10
+virtual clusters. As of the end of May 2017, there are 10 virtual
+clusters that are either running in production, or ready to run, and
+another 2 that are in the on-ramping process. The table below (Table 1)
+shows the projects running/requesting VCs on \emph{Comet} and their
+status.
+
+Table 1: Projects running/requesting virtual cluster capability on
+\emph{Comet} and status
+
+
+  \caption{Example Comet application}
+  \label{tab:examples}
+    \toprule
+    Name & Domain & Human in the Loop\\
+    \midrule
+    DBGAP & Bio application to do this that and the orther & deployment, porting \\
+  \bottomrule
+\end{tabular}
+\end{table*}
+
+\begin{table*}
+
+\begin{tabular}{p{2cm}p{3cm}p{8cm}}
+
+\toprule
+\textbf{Project} & \textbf{Group/Institute} & \textbf{Purpose} &
+\textbf{Status}\\
+\midrule
+\endhead
+OSG & Open Science Grid & OSG & Running in Production\\
+Lifemapper & Biodiversity Institute, University of Kansas & Species
+Biodiversity Mapping and Prediction & Running in
+Production\\
+UFL & University of Florida & PRAGMA/GLEON Lake Expedition & Running in
+Production\\
+RACD & XSEDE & XSEDE SD\&I Test Cluster & Running in
+Production\\
+Kepler-GW & SDSC & Machine learning \& performance study & Running in
+Production\\
+OpenTOPO & OpenTopography / SDSC & High Res Topography Data and Tools &
+Running in Production\\
+NBDRA & NIST & Prototype the NIST Big Data Reference Architecture &
+Running in Production\\
+ABCD & UCSD & Brain Development and Child Health & Ready in
+Production\\
+MGHPCC & MGHPC / Harvard & Campus Champion-alike & Ready in
+Production\\
+TELESCP & CAIDA / SDSC & Network traffic monitoring & Ready in
+Production\\
+NSG & SDSC & Neuroscience Gateway & On-ramping\\
+ATL & SDSC & Performance tools development and code optimization &
+On-ramping\\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Here we showcase a few projects that use VC on \emph{Comet} to show the
+sciences that \emph{Comet} is supporting via the VC capabilities. We
+also quoted some user feedback/justification on why they need the VC
+feature on \emph{Comet}.
+
+\emph{\textbf{Open Science Grid (OSG)}}: OSG is one of the early users
+started on the DEV environment, and has been fully migrated to the
+production system. The integration with OSG (used for the LIGO data
+verification) allows any \emph{Comet} allocated user who wants to run
+through OSG the ability to debit their XSEDE allocation if they do so.
+There are now 5 XSEDE allocations running on \emph{Comet} via the OSG
+virtual cluster interface. To name a few, the difference allocations
+include: LIGO-gravitational wave, CMS-dark matter, IceCube, etc.
+
+What OSG likes:
+
+\begin{itemize}
+\item
+  Supporting small scale multi-core, large memory \& GPU (Note: planned
+  future capability), large IO jobs, i.e., functions as a
+  \textbf{portal} to Comet via the virtual cluster interface in order to
+  provide capabilities that are otherwise rare on OSG.
+
+  \begin{itemize}
+  \item
+    One admin to manage a VC with many nodes, and to submit jobs on
+    behalf of \emph{\textbf{multiple allocations}}.
+  \end{itemize}
+\end{itemize}
+
+Feedback from OSG:
+
+\begin{itemize}
+\item
+  The VC interface is a very powerful tool for experts.
+\item
+  Was \textbf{very easy} for OSG to use the VC interface.
+
+  \begin{itemize}
+  \item
+    A day or two and we were running close to the full diversity of
+    science on the VC onramp environment.
+  \end{itemize}
+\item
+  Having access to a virtual cluster on \emph{Comet} that can be
+  \textbf{customized} opens the door for \textbf{a whole new set of
+  applications we were never able to support before.}
+\end{itemize}
+
+\textbf{\emph{LifeMapper}:} Lifemapper (LM) is another projects started
+from the DEV mode and has been migrated to the production system. LM is
+a high-throughput species distribution (range) modeling system.
+Lifemapper was created to compute, archive and web publish, species
+distribution models using all available online species occurrence data
+vouchered by specimens in natural history museums from over 250 years of
+biodiversity inventory.
+
+Feedback from OSG:
+
+\begin{itemize}
+\item
+  ``Our continuing work with SDSC has led us to the conclusion that
+  deploying our software on a virtual cluster on SDSC's \emph{Comet}
+  cluster would \textbf{leverage both our existing Rocks-based software
+  stack, and also the virtual cluster support unique to \emph{Comet}}''
+\end{itemize}
+
+\textbf{\emph{UFl/GRAPLEr}:} GRAPLEr, a distributed computing system,
+integrates and applies overlay virtual network, high-throughput
+computing (HTC), and Web service technologies to allow lake ecology
+modelers to dispatch the execution of large numbers of simulations from
+their own R/R-studio desktop environment
+
+Justification of why using VC:
+
+\begin{itemize}
+\item
+  \emph{Comet} virtual cluster is an ideal match for this project
+  because it \textbf{allows unprecedented flexibility in configuring,
+  and dynamic joining/leaving of resources} in a GRAPLEr pool. Our
+  architecture is based on \textbf{the ability to create virtual
+  clusters that we can configure with our own software stack, on demand
+  - unlike other HPC resources, which lack this flexibility, the Comet
+  virtual cluster is a natural fit for our project}.
+\end{itemize}
+
+\textbf{Kepler Gateway:} Develop an execution engine that decides the
+optimal execution strategy to perform a workflow on a set of available
+resources. The approach utilizes machine-learning techniques to predict
+resource usage and execution times of complex workflows on distributed
+platforms. The information collected by Kepler provenance framework,
+along with the static and dynamic profiling parameters will be used to
+train machine-learning models. To train the Machine Learning models,
+bioKepler implementation of Microbiome Taxonomy and Gene Abundance
+Workflow (MTGA) is used as a use case.
+
+Justification of using VC on \emph{Comet}:
+
+\begin{itemize}
+\item
+  \textbf{Large memory node} with the \textbf{flexibility to deploy a
+  gateway node that is not available elsewhere}
+\item
+  \textbf{The console access is pretty handy}
+\end{itemize}
+
+\textbf{NIST BigData Reference Architecture (nbdra):} nbdra is
+\textbf{defining of vendor neutral big data architecture framework that}
+
+\begin{itemize}
+\item
+  Leverage HPC
+\item
+  Leverage cloud
+\item
+  Leverage microservices
+\item
+  Leverage DevOps
+\item
+  Leverage software stacks
+\end{itemize}
+
+\textbf{Cloudmesh Client is significantly impacting Volume 8 of the
+NBDRA}
+
+\begin{itemize}
+\item
+  Access hybrid clouds OpenStack, (EC2, AWS, Azure); possible to extend
+  to other systems like Jetstream, Bridges etc.
+\item
+  Customizable launchers available through command line or browser --
+  can target specific application user communities.
+\end{itemize}
+
+\textbf{Key advantage of using \emph{Comet} VC:}
+
+\begin{itemize}
+\item
+  A reference implementation of the proposed reference architecture on
+  \emph{Comet} makes it easy to access both HPC and virtualization
+  environments. As HPC and the VC are both based on the same hardware,
+  this makes performance study an easy task on \emph{Comet}.
+\end{itemize}
+
+With more VCs coming to use the system, we have recently conducted some
+preliminary assessment of the virtual clusters jobs (please note each VC
+node(s) starting/powering on is equivalent to a Slurm job on the Comet
+queuing system requesting the same set of resources as the HPC jobs do)
+to better understand the VC jobs characteristics and user experience. We
+studied the waittime, which is defined as the duration between a VC
+admin requested to start VC node(s) to when the node(s) is actually
+started and ready to the use. On the Slurm side this is roughly
+translated to the duration between job submission time and job starting
+time.
+
+Figure 1 shows the VC jobs waittime in their submitted order. Figure 2
+shows the empirical cumulative distribution of the waitime. Figure 1
+shows that most of the time users only need to wait minutes to get the
+node(s) running, while in some time when the system might be extremely
+busy, it waited a bit longer (an hour or so). Figure 2 shows that 3
+quarters of the jobs waited less than 3.6 minutes, and 90\% of them
+waited less than 20 minutes. Statistics also shows that 67\% jobs waited
+less than 1 minute to get started.
+
+\includegraphics[width=6in,height=4.63611in]{media/image1.emf}
+
+Figure 1. VC jobs wait time (minutes) in submitted order
+
+\includegraphics[width=6in,height=4.63611in]{media/image2.emf}
+
+Figure 2. Empirical Cumulative Distribution of VC jobs waittime
+(minutes)
+
+We also studied the job wall time (Figure 3). While most jobs requested
+the default walltime (2 days), 3 quarters of them completed in 21.8
+hours, and 90\% of them completed in 39.7 hours. This helps us to better
+understand the VC job characteristics, and proves that the 2-day default
+walltime configuration (with the ability to request up to 7 days
+walltime) is appropriate.
+
+These analyses are based on the data we have been collecting more
+recently (about a month worth of data, \textasciitilde{}700 VC jobs). We
+will continue monitoring this to help provide better services to VC
+users.
+
+\includegraphics[width=6in,height=4.63611in]{media/image3.emf}
+
+Figure 3. Empirical Cumulative Distribution of VC jobs walltime (hours)
+

@@ -1,0 +1,232 @@
+
+\subparagraph{/virtualcluster}\label{virtualcluster}
+
+GET /virtualcluster
+
+Returns a list of all virtual clusters
+
+Responses
+
+\begin{longtable}[]{@{}p{0.1\columnwidth}p{0.5\columnwidth}p{0.4\columnwidth}@{}}
+\toprule
+Code & Description & Schema\tabularnewline
+\midrule
+\endhead
+200 & The list of virtual clusters &
+array{[}\protect\hyperlink{virtualcluster}{Virtualcluster}{]}\tabularnewline
+401 & Not authorized & String\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{virtualclustername}{%
+\subparagraph{/virtualcluster/\{name\}}\label{virtualclustername}}
+
+GET /virtualcluster/\{name\}
+
+Returns an virtual cluster by name
+
+Responses
+
+\begin{longtable}[]{@{}p{0.1\columnwidth}p{0.5\columnwidth}p{0.4\columnwidth}@{}}
+\toprule
+Code & Description & Schema\tabularnewline
+\midrule
+\endhead
+200 & Returning the information of the virtual cluster &
+\protect\hyperlink{virtualcluster}{Virtualcluster}\tabularnewline
+401 & Not authorized & String\tabularnewline
+404 & The named virtual cluster could not be found &
+String\tabularnewline
+\bottomrule
+\end{longtable}
+
+Parameters
+
+\begin{longtable}[]{@{}p{0.1\columnwidth}p{0.2\columnwidth}p{0.3\columnwidth}p{0.2\columnwidth}p{0.2\columnwidth}@{}}
+\toprule
+Name & Located in & Description & Required & Schema\tabularnewline
+\midrule
+\endhead
+name & path & The name of the virtual cluster & True &
+String\tabularnewline
+\bottomrule
+\end{longtable}
+
+PUT /virtualcluster/\{name\}
+
+Uploads an virtual cluster to the list of virtual clusters
+
+Responses
+
+\begin{longtable}[]{@{}p{0.1\columnwidth}p{0.5\columnwidth}p{0.4\columnwidth}@{}}
+\toprule
+Code & Description & Schema\tabularnewline
+\midrule
+\endhead
+200 & Virtual cluster updated or created & String\tabularnewline
+401 & Not authorized & String\tabularnewline
+404 & The named virtual cluster could not be found &
+String\tabularnewline
+\bottomrule
+\end{longtable}
+
+Request Body
+
+\begin{longtable}[]{@{}p{0.1\columnwidth}p{0.2\columnwidth}p{0.3\columnwidth}p{0.2\columnwidth}p{0.2\columnwidth}@{}}
+\toprule
+Located in & Description & Required & Schema &\tabularnewline
+\midrule
+\endhead
+Body & The virtual cluster to be uploaded & True &
+\protect\hyperlink{virtualcluster}{Virtualcluster} &\tabularnewline
+\bottomrule
+\end{longtable}
+
+DELETE /virtualcluster/\{name\}
+
+Deletes an virtual cluster by name
+
+Responses
+
+\begin{longtable}[]{@{}p{0.1\columnwidth}p{0.5\columnwidth}p{0.4\columnwidth}@{}}
+\toprule
+Code & Description & Schema\tabularnewline
+\midrule
+\endhead
+200 & Deletion successful & String\tabularnewline
+401 & Not authorized & String\tabularnewline
+404 & The named virtual cluster could not be found &
+String\tabularnewline
+\bottomrule
+\end{longtable}
+
+Parameters
+
+\begin{longtable}[]{@{}p{0.1\columnwidth}p{0.2\columnwidth}p{0.3\columnwidth}p{0.2\columnwidth}p{0.2\columnwidth}@{}}
+\toprule
+Name & Located in & Description & Required & Schema\tabularnewline
+\midrule
+\endhead
+name & path & The name of the virtual cluster & True &
+String\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{virtualclusternamenode}{%
+\subparagraph{/virtualcluster/\{name\}/\{node\}}\label{virtualclusternamenode}}
+
+GET /virtualcluster/\{name\}/\{node\}
+
+Returns the specific node of the named virtual cluster. If the node name
+is manager, the manager node is used. A compute node can not be named
+manager
+
+Responses
+
+\begin{longtable}[]{@{}p{0.1\columnwidth}p{0.5\columnwidth}p{0.4\columnwidth}@{}}
+\toprule
+Code & Description & Schema\tabularnewline
+\midrule
+\endhead
+200 & Node info & \protect\hyperlink{node}{Node}\tabularnewline
+401 & Not authorized & String\tabularnewline
+404 & The named virtual cluster or node could not be found &
+String\tabularnewline
+\bottomrule
+\end{longtable}
+
+Parameters
+
+\begin{longtable}[]{@{}p{0.1\columnwidth}p{0.2\columnwidth}p{0.3\columnwidth}p{0.2\columnwidth}p{0.2\columnwidth}@{}}
+\toprule
+Name & Located in & Description & Required & Schema\tabularnewline
+\midrule
+\endhead
+name & path & The name of the virtual cluster & True &
+String\tabularnewline
+node & path & The node name & True & String\tabularnewline
+\bottomrule
+\end{longtable}
+
+PUT /virtualcluster/\{name\}/\{node\}
+
+Updates or adds a node to the virtual cluster. If the node name is
+manager, the manager node is uploaded.
+
+Responses
+
+\begin{longtable}[]{@{}p{0.1\columnwidth}p{0.5\columnwidth}p{0.4\columnwidth}@{}}
+\toprule
+Code & Description & Schema\tabularnewline
+\midrule
+\endhead
+200 & Node added sucessfully & String\tabularnewline
+401 & Not authorized & String\tabularnewline
+404 & The named virtual cluster or node could not be found &
+String\tabularnewline
+\bottomrule
+\end{longtable}
+
+Parameters
+
+\begin{longtable}[]{@{}p{0.1\columnwidth}p{0.2\columnwidth}p{0.3\columnwidth}p{0.2\columnwidth}p{0.2\columnwidth}@{}}
+\toprule
+Name & Located in & Description & Required & Schema\tabularnewline
+\midrule
+\endhead
+name & path & The name of the virtual cluster & True &
+String\tabularnewline
+node & path & The node name & True & String\tabularnewline
+\bottomrule
+\end{longtable}
+
+Request Body
+
+\begin{longtable}[]{@{}p{0.1\columnwidth}p{0.2\columnwidth}p{0.3\columnwidth}p{0.2\columnwidth}p{0.2\columnwidth}@{}}
+\toprule
+Located in & Description & Required & Schema &\tabularnewline
+\midrule
+\endhead
+Body & The node to be uploaded & True & \protect\hyperlink{node}{Node}
+&\tabularnewline
+\bottomrule
+\end{longtable}
+
+DELETE /virtualcluster/\{name\}/\{node\}
+
+Delete a node in the virtual cluster
+
+Responses
+
+\begin{longtable}[]{@{}p{0.1\columnwidth}p{0.5\columnwidth}p{0.4\columnwidth}@{}}
+\toprule
+Code & Description & Schema\tabularnewline
+\midrule
+\endhead
+200 & Deletion successful & String\tabularnewline
+401 & Not authorized & String\tabularnewline
+404 & The named virtual cluster or node could not be found &
+String\tabularnewline
+\bottomrule
+\end{longtable}
+
+Parameters
+
+\begin{longtable}[]{@{}p{0.1\columnwidth}p{0.2\columnwidth}p{0.3\columnwidth}p{0.2\columnwidth}p{0.2\columnwidth}@{}}
+\toprule
+Name & Located in & Description & Required & Schema\tabularnewline
+\midrule
+\endhead
+name & path & The name of the virtual cluster & True &
+String\tabularnewline
+node & path & The node name & True & String\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{virtualcluster.yaml}{%
+\paragraph{virtualcluster.yaml}\label{virtualcluster.yaml}}
+
+\begin{verbatim}
+\end{verbatim}
+
+
